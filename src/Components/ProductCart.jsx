@@ -27,29 +27,29 @@ const ProductCart = () => {
 
     return (
         <div className="container mx-auto py-16 px-4">
-            <h2 className="text-3xl font-bold mb-6">Shopping Cart</h2>
+            <h2 className="text-center  mb-6">Shopping Cart</h2>
             <div className="mb-4">
                 {products.length < 1 ? (
-                    <h1 className='text-xl text-center'>No items in cart!</h1>
+                    <h3 className='text-center text-danger mt-5'>No items selected!</h3>
                 ) : (
-                    <table className="table-auto w-full">
+                    <table className="table table-hover mt-3">
                         <thead>
                             <tr>
-                                <th className="px-4 py-2 text-start">Products</th>
-                                <th className="px-4 py-2">Price</th>
-                                <th className="px-4 py-2">Action</th>
+                                <th className="col-3 fs-5">Products</th>
+                                <th className="col-3 fs-5 text-center">Price</th>
+                                <th className="col-3 fs-5 text-center">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             {products.map((item) => (
                                 <tr key={item.id}>
-                                    <td className="px-4 py-2 flex items-center">
-                                        <div className='mr-2'></div>
+                                    <td className=" col-3 ">
+                                        <div className=' text-center'></div>
                                         {item.title}
                                     </td>
-                                    <td className="px-4 py-2 text-center">${item.price}</td>
-                                    <td className="px-4 py-2 text-center">
-                                        <button onClick={() => handleDelete(item)} className="">❌</button>
+                                    <td className="text-center col-3">${item.price}</td>
+                                    <td className=" text-center col-3">
+                                        <button onClick={() => handleDelete(item)} className="btn btn-danger "><i class="fa-solid fa-xmark"></i></button>
                                     </td>
                                 </tr>
                             ))}
@@ -58,9 +58,9 @@ const ProductCart = () => {
                 )}
             </div>
             {products.length > 0 && (
-                <div className="mb-6">
-                    <button className="w-full p-2 bg-pink-500 text-white font-bold rounded hover:bg-pink-600 focus:outline-none">
-                        Proceed to Checkout
+                <div className="mb-6 text-center">
+                    <button className=" col-4 btn btn-info fw-bold text-white">
+                        Check it!!
                     </button>
                 </div>
             )}

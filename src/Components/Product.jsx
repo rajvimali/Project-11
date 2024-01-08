@@ -22,7 +22,7 @@ const Product = () => {
 
     }
     return (
-        <div className="container mx-auto  row row-cols-4 d-flex py-2 px-4">
+        <div className="container mx-auto  row  d-flex py-2 px-4">
             {user &&
                 user.map((item, idex) => {
                     return (
@@ -39,10 +39,10 @@ const Product = () => {
                                         <div className="product-price">₹{item.price}</div>
                                         <div className="product-links">
                                             <button
-                                                className="border-0 p-1 rounded"
+                                                className="btn btn-info text-white fw-bold"
                                                 onClick={() => addCart(item)}
                                             >
-                                                Add to cart +
+                                                Add to cart
                                             </button>
                                         </div>
                                     </div>
